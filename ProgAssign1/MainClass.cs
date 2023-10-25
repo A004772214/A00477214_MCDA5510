@@ -20,6 +20,19 @@ namespace DIrectoryWalker
                 List<string> csvFiles = cfw.GetCsvFiles("ProgAssign1\\Sample Data\\Sample Data\\");
                 string outputFile = "ProgAssign1\\Output\\output.csv";
 
+                string outputFolder = "ProgAssign1\\Output";
+                string logFolder = "ProgAssign1\\logs";
+
+                if (!System.IO.Directory.Exists(outputFolder))
+                {
+                    System.IO.Directory.CreateDirectory(outputFolder);
+                }
+
+                if (!System.IO.Directory.Exists(logFolder))
+                {
+                    System.IO.Directory.CreateDirectory(logFolder);
+                }
+
                 if (System.IO.File.Exists(outputFile))
                 {
                     System.IO.File.Delete(outputFile);
